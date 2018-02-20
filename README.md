@@ -4,7 +4,7 @@ IARC course on analyzing TCGA data in the SevenBridges Genomics CancerGenomicsCl
 
 ## Description of the course
 
-__Learning objectives__
+__Learning objectives__  
 After completing this workshop, participants will be able to run their own computational tools on the cloud using TCGA data using:
 * the SevenBridges web interface to select and retrieve TCGA data,
 * Docker and DockerHub to build and store containers to deploy their own
