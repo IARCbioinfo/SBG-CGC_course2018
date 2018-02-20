@@ -31,7 +31,8 @@
     },
     {
       "type": "string",
-      "id": "#output_file_name"
+      "id": "#output_file_name",
+      "required" : true
     }
   ],
   "requirements": [
