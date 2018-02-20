@@ -8,7 +8,7 @@ p <- a$project(id = paste("tdelhomme/", project, sep=""))
 
 my_bam = p$file("bam", complete = TRUE)[1]
 
-f = "~/Documents/Lectures_and_Notes/courses/cloudcomputing_2018_IARC/SBG_Rapi_CWL/code/header.json"
+f = "samtools_header.json"
 samtools_header = convert_app(f)
 
 p$app_add("header_Rapi", samtools_header)
