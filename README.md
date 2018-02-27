@@ -38,6 +38,10 @@ __Friday 2 March__
 12:30-14:00 Lunch Break  
 14:00-17:00 Practical application: running your own practical project in the cloud using the R api, CWL and Docker.  
 
+## Gitter Chat
+
+A [gitter channel](https://gitter.im/IARCbioinfo/SBG-CGC_course2018) is open for the course. This will allow participants to discuss on their projects but also to ask any question regarding the course.
+
 ## Participants guidelines
 
 Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/mGalarnyk/41c887e921e712baf86fecc507b3afc7).  
