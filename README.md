@@ -37,7 +37,10 @@ __Friday 2 March__
 09:00-12:30 Practical application: running your own practical project in the cloud using the R api, CWL and Docker.  
 12:30-14:00 Lunch Break  
 14:00-17:00 Practical application: running your own practical project in the cloud using the R api, CWL and Docker.  
-##
+
+## Participants guidelines
+
+Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/mGalarnyk/41c887e921e712baf86fecc507b3afc7).  
 
 ## Projects
 
