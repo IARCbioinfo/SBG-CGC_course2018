@@ -1,5 +1,7 @@
 # SBG-CGC_course2018
 
+[![Join the chat at https://gitter.im/IARCbioinfo/SBG-CGC_course2018](https://badges.gitter.im/IARCbioinfo/SBG-CGC_course2018.svg)](https://gitter.im/IARCbioinfo/SBG-CGC_course2018?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 IARC course on analyzing TCGA data in the SevenBridges Genomics CancerGenomicsCloud (SBG-CGC).  
 
 ## Description of the course
