@@ -1,4 +1,4 @@
-# SBG-CGC_course2018
+# SBG-CGC course 2018
 
 [![Join the chat at https://gitter.im/IARCbioinfo/SBG-CGC_course2018](https://badges.gitter.im/IARCbioinfo/SBG-CGC_course2018.svg)](https://gitter.im/IARCbioinfo/SBG-CGC_course2018?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -59,6 +59,8 @@ biocLite("sevenbridges")
 ```
 
 ## Projects
+
+__Important__: your CGC token gives full access to your CGC account, including the protected TCGA data if you have access to it. This is like your username and password. This means that you should never share it with anyone, and only keep it in a secure location (not a USB key, a non-secure computer or a laptop leaving IARC).
 
 For each project, we have opened an issue to discuss on, and add a folder to host the code.  
 
