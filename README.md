@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/IARCbioinfo/SBG-CGC_course2018](https://badges.gitter.im/IARCbioinfo/SBG-CGC_course2018.svg)](https://gitter.im/IARCbioinfo/SBG-CGC_course2018?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-IARC course on analyzing TCGA data in the SevenBridges Genomics CancerGenomicsCloud (SBG-CGC).  
+IARC course on analyzing TCGA data in the SevenBridges Genomics CancerGenomicsCloud (SBG-CGC). Slides are in the slide folder.
 
 ## Description of the course
 
@@ -44,7 +44,13 @@ __Friday 2 March__
 
 A [gitter channel](https://gitter.im/IARCbioinfo/SBG-CGC_course2018) is open for the course. This will allow participants to discuss on their projects but also to ask any question regarding the course.
 
-## Participants guidelines
+## Laptop setup
+
+Laptops use Ubuntu 16.04.
+
+Docker is already installed. If you are curious, here is how to install it on Docker [website](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+
+If you need a good text editor, [Atom](https://atom.io) is also installed.
 
 Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/mGalarnyk/41c887e921e712baf86fecc507b3afc7).  
 Caution:  
