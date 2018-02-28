@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/IARCbioinfo/SBG-CGC_course2018](https://badges.gitter.im/IARCbioinfo/SBG-CGC_course2018.svg)](https://gitter.im/IARCbioinfo/SBG-CGC_course2018?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-IARC course on analyzing TCGA data in the SevenBridges Genomics CancerGenomicsCloud (SBG-CGC). Slides are in the slide folder.
+IARC course on analyzing TCGA data in the SevenBridges Genomics [Cancer Genomics Cloud](http://www.cancergenomicscloud.org) (SBG-CGC). Slides are in the slide folder.
 
 ## Description of the course
 
@@ -63,6 +63,12 @@ R package sevenbridges-r is also needed:
 source("https://bioconductor.org/biocLite.R")
 biocLite("sevenbridges")
 ```
+
+## Useful links
+- Seven Bridges [Cancer Genomics Cloud](http://www.cancergenomicscloud.org)
+- Cancer Genomics Cloud publication in [Cancer Research ](http://cancerres.aacrjournals.org/content/77/21/e3.long)
+- [Awesome TCGA](https://github.com/IARCbioinfo/awesome-TCGA): a curated list of TCGA resources maintained by the [IARCbioinfo organization](https://github.com/IARCbioinfo)
+
 
 ## Projects
 
