@@ -67,8 +67,15 @@ biocLite("sevenbridges")
 ## Useful links
 - Seven Bridges [Cancer Genomics Cloud](http://www.cancergenomicscloud.org)
 - Cancer Genomics Cloud publication in [Cancer Research ](http://cancerres.aacrjournals.org/content/77/21/e3.long)
-- [Awesome TCGA](https://github.com/IARCbioinfo/awesome-TCGA): a curated list of TCGA resources maintained by the [IARCbioinfo organization](https://github.com/IARCbioinfo)
-
+- [Awesome TCGA](https://github.com/IARCbioinfo/awesome-TCGA): a curated list of TCGA resources maintained by the [IARCbioinfo organization](https://github.com/IARCbioinfo). The most useful ones for this course are:
+    - [Genomic Data Commons (GDC) data portal](https://portal.gdc.cancer.gov): the official entry point to download TCGA data.
+    - [GDC data release notes](https://docs.gdc.cancer.gov/Data/Release_Notes/Data_Release_Notes/)
+    - [List of cohorts with sample sizes](https://portal.gdc.cancer.gov/projects?filters=~%28op~%27and~content~%28~%28op~%27in~content~%28field~%27projects.program.name~value~%28~%27TCGA%29%29%29%29%29)
+    - [TCGA barcode](https://wiki.nci.nih.gov/display/TCGA/TCGA+barcode)
+    - [TCGA code tables](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables)
+    - [Clinical data table](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/clinical-data-harmonization)
+    - [MAF file format](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/) description
+- [Docker](https://www.docker.com) and [DockerHub](https://hub.docker.com)
 
 ## Projects
 
