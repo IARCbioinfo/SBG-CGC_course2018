@@ -20,11 +20,11 @@ __Main topics__
 * SevenBridges R API and web interface
 * TCGA data analysis
 
-## Agenda
+## Agenda and slides
 
 __Wednesday 28 February__  
-09:00-10:00 Introduction to cloud computing and the SevenBridges architecture  
-10:00-10:30 Introduction to TCGA data  
+09:00-10:00 [Introduction to cloud computing](slides/01-introduction) and the [SevenBridges architecture](slides/02-architecture.pdf)  
+10:00-10:30 [Introduction to TCGA](slides/03-TCGA.pdf) data  
 10:30-11:00 Break  
 11:00-11:30 Introduction to the SevenBridges web interface to run analyses  
 11:30-12:30 Practical application: run your first basic analysis in the cloud  
