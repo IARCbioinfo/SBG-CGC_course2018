@@ -52,7 +52,11 @@ Docker is already installed. If you are curious, here is how to install it on Do
 
 If you need a good text editor, [Atom](https://atom.io) is also installed.
 
-Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/tdelhomme/a86a459b6d24c9299cd43033f3e8fe67).  
+Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/mGalarnyk/41c887e921e712baf86fecc507b3afc7).  
+Caution:  
+  * please change the version of rstudio installed into the last one: 1.1.423
+  * you would probably need to add a key with `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys THE_KEY`.  
+  * two more packages are needed, execute: `sudo apt install libcurl4-openssl-dev` and `sudo apt-get install libssl-dev`
 
 R package sevenbridges-r is also needed:
 ```
@@ -69,7 +73,7 @@ biocLite("sevenbridges")
     - [List of cohorts with sample sizes](https://portal.gdc.cancer.gov/projects?filters=~%28op~%27and~content~%28~%28op~%27in~content~%28field~%27projects.program.name~value~%28~%27TCGA%29%29%29%29%29)
     - [TCGA barcode](https://wiki.nci.nih.gov/display/TCGA/TCGA+barcode)
     - [TCGA code tables](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables)
-    - [Clinical data table](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/clinical-data-harmonization)
+    - [TCGA data dictionary](https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?_top=1)
     - [MAF file format](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/) description
 - [Docker](https://www.docker.com) and [DockerHub](https://hub.docker.com)
 
