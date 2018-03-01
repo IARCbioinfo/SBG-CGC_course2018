@@ -121,6 +121,10 @@ $ samtools_docker "view -H NA06984.bam | head"
 
 And voilà! You can save your image using `docker save 'samtools_img' > samtools_img.tar` and distribute it (check software licences...). You can also host it freely on [Docker Hub](https://hub.docker.com). To push a repository to the Docker Hub (see instructions [here](https://docs.docker.com/docker-hub/repos/)), you first need to create a repository on Docker Hub, and to name your local image using your Docker Hub username, and the repository name that you created. You can add multiple images to a repository, by adding a specific `:<tag>` to it (for example `docs/base:testing`). If it’s not specified, the tag defaults to `latest`. You can name your local images either when you build it, using `docker build -t <hub-user>/<repo-name>[:<tag>]`, by re-tagging an existing local image `docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]`, or by using `docker commit <exiting-container> <hub-user>/<repo-name>[:<tag>]` to commit changes.
 
+You first need to login to Docker Hub on your shell by using:
+```
+$ docker login -u <hub-user>
+```
 Now you can push this repository to the registry designated by its name or tag.
 ```
 $ docker push <hub-user>/<repo-name>:<tag>
