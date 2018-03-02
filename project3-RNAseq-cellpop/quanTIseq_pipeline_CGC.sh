@@ -8,11 +8,17 @@ fname=$(basename "$1" .bam)
 fnamefq="${1%.bam}"
 f1=$fnamefq"_1.fq"
 f2=$fnamefq"_2.fq"
+echo "samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -"
 samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
 
 # create input file
 mkdir -p /home/Input
 echo "Sample "$fname"_1.fq "$fname"_2.fq" > /home/Input/inputfile.txt
+
+echo "Sample "$fname"_1.fq "$fname"_2.fq"
+
+echo $f1
+echo $f2
 
 # set initial pipelinesteps to FALSE:
 preproc="FALSE"
