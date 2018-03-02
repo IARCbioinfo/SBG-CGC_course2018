@@ -88,7 +88,8 @@ Main steps to think about:
 - Find on which TCGA data you want to run it.
 - Try to run it locally if possible.
 - Build a Docker container and try to run the analysis in the container.
-- Create a Dockerfile, host it on github, and create an associated automated build on Docker Hub.
+- Create a Dockerfile and host it on this github repository in your project folder
+- Create an associated automated build on Docker Hub in the [iarcbioinfo organization](https://hub.docker.com/u/iarcbioinfo/). See this example to specify the [folder of your Dockerfile](https://hub.docker.com/r/iarcbioinfo/sbg-cgc_course2018_project3/~/settings/automated-builds/)
 - Create a project on the CGC.
 - Add the TCGA data files you will need in your project.
 - Create an App on the CGC that is using your docker container hosted on Docker Hub (use the web interface or write your own CWL code).
