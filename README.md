@@ -96,8 +96,8 @@ Main steps to think about:
 
 For each project, we have opened an issue to discuss on, and add a folder to host the code.  
 
-Project 1: needlestack variant calling. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/1). [Code]().
+Project 1: needlestack variant calling. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/1). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project1-needlestack).
 
-Project 2: neutral tumor evolution. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/2). [Code]().
+Project 2: neutral tumor evolution. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/2). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project2-neutrality).
 
-Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/3). [Code]().
+Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/3). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project3-RNAseq-cellpop).
