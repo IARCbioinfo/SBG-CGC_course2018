@@ -44,8 +44,8 @@ print(head(maf))
 
 all_r2=c()
 all_a = c()
-
-pdf(paste(strsplit(MAF,"mutect")[[1]][1],"_Neutrality_test.pdf",sep=""),10,7) #Mettre dans le output avec le nom du MAF
+print(paste(strsplit(strsplit(MAF,"/")[[1]][5],"mutect")[[1]][1],"_Neutrality_test.pdf",sep=""))
+pdf(paste(strsplit(strsplit(MAF,"/")[[1]][5],"mutect")[[1]][1],"_Neutrality_test.pdf",sep=""),10,7) #Mettre dans le output avec le nom du MAF
 par(mfrow=c(2,2))
 
 sample=unique(maf$Tumor_Sample_Barcode)
