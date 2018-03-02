@@ -52,7 +52,11 @@ Docker is already installed. If you are curious, here is how to install it on Do
 
 If you need a good text editor, [Atom](https://atom.io) is also installed.
 
-Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/tdelhomme/a86a459b6d24c9299cd43033f3e8fe67).  
+Participants would need to install R and Rstudio. One possibility is to use the steps proposed in [this gist](https://gist.github.com/mGalarnyk/41c887e921e712baf86fecc507b3afc7).  
+Caution:  
+  * please change the version of rstudio installed into the last one: 1.1.423
+  * you would probably need to add a key with `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys THE_KEY`.  
+  * two more packages are needed, execute: `sudo apt install libcurl4-openssl-dev` and `sudo apt-get install libssl-dev`
 
 R package sevenbridges-r is also needed:
 ```
@@ -62,14 +66,16 @@ biocLite("sevenbridges")
 
 ## Useful links
 - Seven Bridges [Cancer Genomics Cloud](http://www.cancergenomicscloud.org)
+- [CGC documentation](https://docs.cancergenomicscloud.org/docs)
 - Cancer Genomics Cloud publication in [Cancer Research ](http://cancerres.aacrjournals.org/content/77/21/e3.long)
 - [Awesome TCGA](https://github.com/IARCbioinfo/awesome-TCGA): a curated list of TCGA resources maintained by the [IARCbioinfo organization](https://github.com/IARCbioinfo). The most useful ones for this course are:
     - [Genomic Data Commons (GDC) data portal](https://portal.gdc.cancer.gov): the official entry point to download TCGA data.
     - [GDC data release notes](https://docs.gdc.cancer.gov/Data/Release_Notes/Data_Release_Notes/)
     - [List of cohorts with sample sizes](https://portal.gdc.cancer.gov/projects?filters=~%28op~%27and~content~%28~%28op~%27in~content~%28field~%27projects.program.name~value~%28~%27TCGA%29%29%29%29%29)
+    - For each cohorts you can download clinical and biospecimen data [here](https://portal.gdc.cancer.gov/projects/TCGA-LUAD) for example for LUAD.
     - [TCGA barcode](https://wiki.nci.nih.gov/display/TCGA/TCGA+barcode)
     - [TCGA code tables](https://gdc.cancer.gov/resources-tcga-users/tcga-code-tables)
-    - [Clinical data table](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/clinical-data-harmonization)
+    - [TCGA data dictionary](https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?_top=1)
     - [MAF file format](https://docs.gdc.cancer.gov/Data/File_Formats/MAF_Format/) description
 - [Docker](https://www.docker.com) and [DockerHub](https://hub.docker.com)
 
@@ -77,10 +83,21 @@ biocLite("sevenbridges")
 
 __Important__: your CGC token gives full access to your CGC account, including the protected TCGA data if you have access to it. This is like your username and password. This means that you should never share it with anyone, and only keep it in a secure location (not a USB key, a non-secure computer or a laptop leaving IARC).
 
+Main steps to think about:
+- Find which software you want to run.
+- Find on which TCGA data you want to run it.
+- Try to run it locally if possible.
+- Build a Docker container and try to run the analysis in the container.
+- Create a Dockerfile, host it on github, and create an associated automated build on Docker Hub.
+- Create a project on the CGC.
+- Add the TCGA data files you will need in your project.
+- Create an App on the CGC that is using your docker container hosted on Docker Hub (use the web interface or write your own CWL code).
+- Create a Task to run your App on your files and run it (use the web interface or the R API).
+
 For each project, we have opened an issue to discuss on, and add a folder to host the code.  
 
-Project 1: needlestack variant calling. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/1). [Code]().
+Project 1: needlestack variant calling. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/1). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project1-needlestack).
 
-Project 2: neutral tumor evolution. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/2). [Code]().
+Project 2: neutral tumor evolution. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/2). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project2-neutrality).
 
-Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/3). [Code]().
+Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/3). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project3-RNAseq-cellpop).
