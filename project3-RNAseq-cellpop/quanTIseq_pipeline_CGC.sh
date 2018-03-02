@@ -5,13 +5,14 @@
 #-------------------------
 
 fname=$(basename "$1" .bam)
-f1=$fname"_1.fq"
-f2=$fname"_2.fq"
+fnamefq="${1%.bam}"
+f1=$fnamefq"_1.fq"
+f2=$fnamefq"_2.fq"
 samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
 
 # create input file
 mkdir -p /home/Input
-echo "Sample $f1 $f2" > /home/Input/inputfile.txt
+echo "Sample "$fname"_1.fq "$fname"_2.fq" > /home/Input/inputfile.txt
 
 # set initial pipelinesteps to FALSE:
 preproc="FALSE"
@@ -63,16 +64,17 @@ exprpath="/home/Output/out_expr/"
 
 if [ $pipelinestart == "expr" ]; then
 
+    fileexpr=`ls $exprpath/*.tsv`
   # Run kallisto:
   Rscript /home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath
   # Map transcripts to human gene symbols:
-  Rscript /home/kallisto/mapTranscripts.R $exprpath "${exprpath}${prefix}"
-  rm ${exprpath}*.tsv
+  Rscript /home/kallisto/mapTranscripts.R $fileexpr "${exprpath}${prefix}"
+  #rm ${exprpath}*.tsv
   
   # Remove rawcount file if not needed:
-  if [ $rawcounts == "FALSE" ]; then
-    rm ${exprpath}*gene_count.txt
-  fi
+  #if [ $rawcounts == "FALSE" ]; then
+  #  rm ${exprpath}*gene_count.txt
+  #fi
   
   pipelinestart="decon"
   expr="TRUE"
@@ -94,11 +96,13 @@ if [ $pipelinestart == "decon" ]; then
   # Run deconvolution:
   Rscript /home/deconvolution/quanTIseq_decon.R $inputfile $deconpath $expr $arrays $signame $tumor $mRNAscale $method $prefix $btotalcells $rmgenes
   decon="TRUE"
-  cp "${deconpath}${prefix}_cell_fractions.txt" /home/user_output/
+
+  cat ${deconpath}${prefix}_cell_fractions.txt
+
+  cp "${deconpath}${prefix}_cell_fractions.txt" /
   
   if [ $btotalcells == "TRUE" ]; then
-  cp "${deconpath}${prefix}_cell_densities.txt" /home/user_output/
-  
+  cp "${deconpath}${prefix}_cell_densities.txt" /
   fi
   
 fi
