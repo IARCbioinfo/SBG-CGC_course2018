@@ -7,7 +7,7 @@
 fname=$(basename "$1" .bam)
 f1=$fname"_1.fq"
 f2=$fname"_2.fq"
-samtools collate -uOn 128 $fname".bam" tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
+samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
 
 # create input file
 mkdir -p /home/Input
