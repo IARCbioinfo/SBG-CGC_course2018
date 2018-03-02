@@ -1,0 +1,69 @@
+{
+  "class": "CommandLineTool",
+  "baseCommand": "bash quanTIseq_pipeline_CGC.sh",
+  "outputs": [
+    {
+      "id": "#ICF_output",
+      "type": "File",
+      "outputBinding": {
+        "glob": {
+          "engine": "#cwl-js-engine",
+          "class": "Expression",
+          "script": "$job.inputs.output_file_name"
+        }
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "type": "File",
+      "description": "BAM file to process with quantiseq",
+      "label": "input BAM file",
+      "id": "#input_BAM",
+      "required" : true
+    },
+    {
+      "type": "string",
+      "id": "#output_file_name",
+      "required" : true
+    }
+  ],
+  "requirements": [
+    {
+      "requirements": [
+        {
+          "dockerPull": "rabix/js-engine",
+          "class": "DockerRequirement"
+        }
+      ],
+      "class": "ExpressionEngineRequirement",
+      "id": "#cwl-js-engine"
+    }
+  ],
+  "stdout": {
+    "engine": "#cwl-js-engine",
+    "class": "Expression",
+    "script": "$job.inputs.output_file_name"
+  },
+  "label": "app_immuno",
+  "id": "app_immuno_json",
+  "sbg:contributors": [
+     "l.soudade",
+     "n.alcala"
+   ],
+  "hints": [
+    {
+      "class": "sbg:CPURequirement",
+      "value": 1
+    },
+    {
+      "class": "sbg:MemRequirement",
+      "value": 1000
+    },
+    {
+      "dockerImageId": "",
+      "class": "DockerRequirement",
+      "dockerPull": "iarcbioinfo/sbg-cgc_course2018_project3:immuno"
+    }
+  ]
+}
