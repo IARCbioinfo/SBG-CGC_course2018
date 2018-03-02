@@ -88,8 +88,8 @@ Main steps to think about:
 - Find on which TCGA data you want to run it.
 - Try to run it locally if possible.
 - Build a Docker container and try to run the analysis in the container.
-- Create a Dockerfile and host it on this github repository in your project folder
-- Create an associated automated build on Docker Hub in the [iarcbioinfo organization](https://hub.docker.com/u/iarcbioinfo/). See this example to specify the [folder of your Dockerfile](https://hub.docker.com/r/iarcbioinfo/sbg-cgc_course2018_project3/~/settings/automated-builds/)
+- Create a Dockerfile and host it on this github repository in your project folder.
+- Create an associated automated build on Docker Hub in the [iarcbioinfo organization](https://hub.docker.com/u/iarcbioinfo/). See this example to specify the [folder of your Dockerfile](https://hub.docker.com/r/iarcbioinfo/sbg-cgc_course2018_project3/~/settings/automated-builds/).
 - Create a project on the CGC.
 - Add the TCGA data files you will need in your project.
 - Create an App on the CGC that is using your docker container hosted on Docker Hub (use the web interface or write your own CWL code).
@@ -105,7 +105,7 @@ Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo
 
 ## Tips and tricks
 
-#### Add public reference files to a project
+### Add public reference files to a project
 
 Through the [web interface](https://cgc.sbgenomics.com/public/files#q), choose the file and copy to your project.  
 
@@ -115,3 +115,7 @@ a$copyFile(id = a$public_file(name = "Homo_sapiens_assembly38.fasta", exact = TR
 a$copyFile(id = a$public_file(name = "Homo_sapiens_assembly38.fasta.fai", exact = TRUE)$id, project = p$id)
 ```
 You can use the interface to get the precise name of the file you need.  
+
+### Create your docker container
+
+A good starting point it to run the base container on your machine (`docker run`) and then to interactively install the software you need in the container. Keep note of the commands you use and then create a Dockerfile with them. Once done try to build from your docker file using `docker build`. See the [docker tutorial](/demo_code/docker_demo.md) for more details.
