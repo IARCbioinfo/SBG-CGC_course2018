@@ -102,3 +102,16 @@ Project 1: needlestack variant calling. [Issue](https://github.com/IARCbioinfo/S
 Project 2: neutral tumor evolution. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/2). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project2-neutrality).
 
 Project 3: cell populations from RNA-seq. [Issue](https://github.com/IARCbioinfo/SBG-CGC_course2018/issues/3). [Code](https://github.com/IARCbioinfo/SBG-CGC_course2018/tree/master/project3-RNAseq-cellpop).
+
+## Tips and tricks
+
+#### Add public reference files to a project
+
+Through the [web interface](https://cgc.sbgenomics.com/public/files#q), choose the file and copy to your project.  
+
+You can also do this easily with the R client for the API:
+```
+a$copyFile(id = a$public_file(name = "Homo_sapiens_assembly38.fasta", exact = TRUE)$id, project = p$id)
+a$copyFile(id = a$public_file(name = "Homo_sapiens_assembly38.fasta.fai", exact = TRUE)$id, project = p$id)
+```
+You can use the interface to get the precise name of the file you need.  
