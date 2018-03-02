@@ -46,7 +46,7 @@ all_r2=c()
 all_a = c()
 
 
-pdf(paste(strsplit(MAF,".muse")[[1]][1],"_Neutrality_test.pdf",sep=""),10,7) #Mettre dans le output avec le nom du MAF
+pdf(paste(strsplit(MAF,".m")[[1]][1],"_Neutrality_test.pdf",sep=""),10,7) #Mettre dans le output avec le nom du MAF
 par(mfrow=c(2,2))
 
 
