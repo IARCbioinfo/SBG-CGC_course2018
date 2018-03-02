@@ -45,6 +45,8 @@ nthreads=$(($maxthreads<$threads?$maxthreads:$threads))
 
 preprocpath="/home/Output/out_preproc/"
 
+echo "Rscript /home/trimmomatic/quanTIseq_preproc.R $inputfile $preprocpath $nthreads $phred $adapters $adapterSeed $palindromeClip $simpleClip $trimLead $trimTrail $minlen $crop"
+
 if [ $pipelinestart == "preproc" ]; then
 
   Rscript /home/trimmomatic/quanTIseq_preproc.R $inputfile $preprocpath $nthreads $phred $adapters $adapterSeed $palindromeClip $simpleClip $trimLead $trimTrail $minlen $crop
@@ -66,8 +68,10 @@ if [ $pipelinestart == "expr" ]; then
 
     fileexpr=`ls $exprpath/*.tsv`
   # Run kallisto:
+    echo "/home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath"
   Rscript /home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath
   # Map transcripts to human gene symbols:
+  echo "Rscript /home/kallisto/mapTranscripts.R $fileexpr "${exprpath}${prefix}
   Rscript /home/kallisto/mapTranscripts.R $fileexpr "${exprpath}${prefix}"
   #rm ${exprpath}*.tsv
   
@@ -94,6 +98,7 @@ deconpath="/home/Output/out_decon/"
 
 if [ $pipelinestart == "decon" ]; then
   # Run deconvolution:
+    echo "Rscript /home/deconvolution/quanTIseq_decon.R $inputfile $deconpath $expr $arrays $signame $tumor $mRNAscale $method $prefix $btotalcells $rmgenes"
   Rscript /home/deconvolution/quanTIseq_decon.R $inputfile $deconpath $expr $arrays $signame $tumor $mRNAscale $method $prefix $btotalcells $rmgenes
   decon="TRUE"
 
