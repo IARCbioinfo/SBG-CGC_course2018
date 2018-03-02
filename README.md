@@ -118,7 +118,7 @@ You can use the interface to get the precise name of the file you need.
 
 ### Use the R API client to query data and add it to a project
 
-[This R script](https://github.com/IARCbioinfo/SBG-CGC_course2018/blob/master/demo_code/R/query_data_with_API.r) gives an example of how using the `sevenbridges-r` R package to query data in the CGC platefrom, and copy the resulting files to your project. 
+[This R script](https://github.com/IARCbioinfo/SBG-CGC_course2018/blob/master/demo_code/R/query_data_with_API.r) gives an example of how using the `sevenbridges-r` R package to query data in the CGC platefrom, and copy the resulting files to your project.
 
 ### Create your docker container
 
