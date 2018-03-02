@@ -4,9 +4,14 @@
 # quanTIseq pipeline 
 #-------------------------
 
+fname=$(basename "$1" .bam)
+f1=$fname"_1.fq"
+f2=$fname"_2.fq"
+samtools collate -uOn 128 $fname tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
+
 # create input file
 mkdir -p /home/Input
-echo "Sample $1 $2" > /home/Input/inputfile.txt
+echo "Sample $f1 $f2" > /home/Input/inputfile.txt
 
 # set initial pipelinesteps to FALSE:
 preproc="FALSE"
@@ -26,8 +31,8 @@ else
   exit
 fi
 
-ln -s $1 /home/Input/.
-ln -s $2 /home/Input/.
+ln -s $f1 /home/Input/.
+ln -s $f2 /home/Input/.
 
 # Get number of available threads from the system and take the minimum of user input and available threads:
 maxthreads=$(grep -c ^processor /proc/cpuinfo)
