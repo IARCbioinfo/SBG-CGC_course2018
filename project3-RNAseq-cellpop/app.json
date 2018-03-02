@@ -4,12 +4,13 @@
   "outputs": [
     {
       "id": "#ICF_output",
-      "type": "File",
+      "type": "Array",
+      "items": "File",
       "outputBinding": {
         "glob": {
           "engine": "#cwl-js-engine",
           "class": "Expression",
-          "script": "$job.inputs.output_file_name"
+          "script": "*.txt"
         }
       }
     }
@@ -40,11 +41,6 @@
       "id": "#cwl-js-engine"
     }
   ],
-  "stdout": {
-    "engine": "#cwl-js-engine",
-    "class": "Expression",
-    "script": "$job.inputs.output_file_name"
-  },
   "label": "app_immuno",
   "id": "app_immuno_json",
   "sbg:contributors": [

@@ -16,8 +16,7 @@
   ],
   "inputs": [
     {
-      "type": "Array",
-      "items": "File",
+      "type": "File",
       "description": "Files to process with BayCount",
       "label": "input htseq-count",
       "id": "#input_htseq",
