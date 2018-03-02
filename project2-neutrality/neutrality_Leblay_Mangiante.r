@@ -35,6 +35,8 @@ print(DP_min)
 MAF=opt$maf #MAF="/home/user/Desktop/Neutrality/TCGA.LUAD.mutect.81ccaef3-4550-494d-882c-895fb5a3de3b.DR-7.0.somatic.maf.gz"
 print(MAF)
 
+print(file.info(MAF))
+
 at = c(1/0.25, 1/0.2, 1/0.15, 1/0.10)
 labels = c("1/0.25","1/0.2","1/0.15","1/0.10")
 xlim=c(1/vaf_max, 1/vaf_min)
