@@ -52,41 +52,41 @@ sample=unique(maf$Tumor_Sample_Barcode)
 print(sample)
 
 
-#for( s in sample){
-  #maf1=maf[which(maf$Tumor_Sample_Barcode==s),]
-  #maf1$vaf<-(maf1$t_alt_count/maf1$t_depth)
-  #new_maf1 = maf1[which(maf1$vaf>=vaf_min & maf1$vaf<=vaf_max & maf1$t_depth>DP_min),] #S?lectionne les lignes avec les crit?res souhait?s 
-  #vaf =new_maf1$vaf
-  #vaf = sort(vaf)
-  #if (sum(is.na(vaf))>0){
-    #vaf = vaf[-which(is.na(vaf))]}
-  #if(length(vaf) >= min_nb_points){
-    #inv_af = 1/vaf[length(vaf):1]
-    #cumsum_naf = ecdf(vaf)(vaf)*length(vaf)
-    #cumsum_inv = (length(vaf) - cumsum_naf + 1)[length(vaf):1]
-    #lm = lm(cumsum_inv ~ inv_af)
-    #r2= round(summary(lm)$adj.r.squared,4)
-    #if(r2>=min_r2) { a = summary(lm)$coefficients[2,1] } else { a=NA }
-    #plot(inv_af, cumsum_inv, main=s,xlab="Inverse allelic frequency 1/f",ylab="Cumulative number of mutations", xaxt='n', xlim=xlim)
-    #text(par("usr")[1] + (par("usr")[2] - par("usr")[1]) * 0.15 , par("usr")[4] - (par("usr")[4] - par("usr")[3]) * 0.03, labels = bquote(R^2 == .(r2)))
-    #axis(side=1, at=at, labels=labels)
-    #if (sum(is.na(lm$coefficients)) == 0) abline(lm, col="red", lwd=2)
-    #all_r2=c(all_r2,r2)
-    #all_a = c(all_a,a)
-  #} else {
-    #plot(0, main=s,xlab="Inverse allelic frequency 1/f",ylab="Cumulative number of mutations", xaxt='n',yaxt='n', xlim=xlim)
-    #text(par("usr")[1] + (par("usr")[2] - par("usr")[1]) * 0.15 , par("usr")[4] - (par("usr")[4] - par("usr")[3]) * 0.03, labels = bquote(R^2 == .("NA")))
-    #axis(side=1, at=at, labels=labels)
-    #all_r2=c(all_r2,NA)
-    #all_a=c(all_a,NA)
-  #}
-#}
+for( s in sample){
+  maf1=maf[which(maf$Tumor_Sample_Barcode==s),]
+  maf1$vaf<-(maf1$t_alt_count/maf1$t_depth)
+  new_maf1 = maf1[which(maf1$vaf>=vaf_min & maf1$vaf<=vaf_max & maf1$t_depth>DP_min),] #S?lectionne les lignes avec les crit?res souhait?s 
+  vaf =new_maf1$vaf
+  vaf = sort(vaf)
+  if (sum(is.na(vaf))>0){
+    vaf = vaf[-which(is.na(vaf))]}
+  if(length(vaf) >= min_nb_points){
+    inv_af = 1/vaf[length(vaf):1]
+    cumsum_naf = ecdf(vaf)(vaf)*length(vaf)
+    cumsum_inv = (length(vaf) - cumsum_naf + 1)[length(vaf):1]
+    lm = lm(cumsum_inv ~ inv_af)
+    r2= round(summary(lm)$adj.r.squared,4)
+    if(r2>=min_r2) { a = summary(lm)$coefficients[2,1] } else { a=NA }
+    plot(inv_af, cumsum_inv, main=s,xlab="Inverse allelic frequency 1/f",ylab="Cumulative number of mutations", xaxt='n', xlim=xlim)
+    text(par("usr")[1] + (par("usr")[2] - par("usr")[1]) * 0.15 , par("usr")[4] - (par("usr")[4] - par("usr")[3]) * 0.03, labels = bquote(R^2 == .(r2)))
+    axis(side=1, at=at, labels=labels)
+    if (sum(is.na(lm$coefficients)) == 0) abline(lm, col="red", lwd=2)
+    all_r2=c(all_r2,r2)
+    all_a = c(all_a,a)
+  } else {
+    plot(0, main=s,xlab="Inverse allelic frequency 1/f",ylab="Cumulative number of mutations", xaxt='n',yaxt='n', xlim=xlim)
+    text(par("usr")[1] + (par("usr")[2] - par("usr")[1]) * 0.15 , par("usr")[4] - (par("usr")[4] - par("usr")[3]) * 0.03, labels = bquote(R^2 == .("NA")))
+    axis(side=1, at=at, labels=labels)
+    all_r2=c(all_r2,NA)
+    all_a=c(all_a,NA)
+  }
+}
 
 dev.off()
 
 
-#R2 = all_r2
-#save(R2,file = paste("R2_",strsplit(MAF,".m")[[1]][1],".Rdata", sep=""))
-#A = all_a
-#save(A,file = paste("a_",strsplit(MAF,"mutect")[[1]][1],".Rdata", sep=""))
+R2 = all_r2
+save(R2,file = paste("R2_",strsplit(MAF,".m")[[1]][1],".Rdata", sep=""))
+A = all_a
+save(A,file = paste("a_",strsplit(MAF,"mutect")[[1]][1],".Rdata", sep=""))
 
