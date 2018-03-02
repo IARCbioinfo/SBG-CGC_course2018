@@ -41,7 +41,8 @@ at = c(1/0.25, 1/0.2, 1/0.15, 1/0.10)
 labels = c("1/0.25","1/0.2","1/0.15","1/0.10")
 xlim=c(1/vaf_max, 1/vaf_min)
 
-#maf=read.table(gzfile(MAF),stringsAsFactors=F,header=T,sep="\t")
+maf=read.table(gzfile(MAF,"r"),stringsAsFactors=F,header=T,sep="\t")
+print(head(maf))
 #maf=read.table(gzfile("/home/user/Desktop/Neutrality/TCGA.LUAD.mutect.81ccaef3-4550-494d-882c-895fb5a3de3b.DR-7.0.somatic.maf.gz"),stringsAsFactors=F,header=T,sep="\t")
 
 #all_r2=c()
