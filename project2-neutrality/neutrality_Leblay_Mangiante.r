@@ -2,7 +2,7 @@
 
 ###########################################################
 ###       Script to perform Neutrality                  ###
-### Tiffany Delhomme, NoÈmie Leblay, and Lise Mangiante ###
+### Tiffany Delhomme, No√©mie Leblay, and Lise Mangiante ###
 ###########################################################
 
 
@@ -44,19 +44,19 @@ pdf(paste(strsplit(MAF,".muse")[[1]][1],"_Neutrality_test.pdf",sep=""),10,7) #Me
 par(mfrow=c(2,2))
 
 
-# Pour chaque Èchantillon du MAF chargÈ 
+# Pour chaque √©chantillon du MAF charg√© 
 
 sample=unique(maf$Tumor_Sample_Barcode)
 
 
-for( s in sample){
+for( s in sample[c(1:5)]){
   maf1=maf[which(maf$Tumor_Sample_Barcode==s),]
   maf1$vaf<-(maf1$t_alt_count/maf1$t_depth)
-  new_maf1 = maf1[which(maf1$vaf>=vaf_min & maf1$vaf<=vaf_max & maf1$t_depth>DP_min),] #SÈlectionne les lignes avec les critËres souhaitÈs 
+  new_maf1 = maf1[which(maf1$vaf>=vaf_min & maf1$vaf<=vaf_max & maf1$t_depth>DP_min),] #S√©lectionne les lignes avec les crit√®res souhait√©s 
   vaf =new_maf1$vaf
   if (sum(is.na(vaf))>0) vaf = vaf[-which(is.na(vaf))]
-  vaf = sort(vaf) #tri de maniËre croissante les vaf
-  if(length(vaf) >= min_nb_points){ #si on peut crÈer un graphique 
+  vaf = sort(vaf) #tri de mani√®re croissante les vaf
+  if(length(vaf) >= min_nb_points){ #si on peut cr√©er un graphique 
     inv_af = 1/vaf[length(vaf):1]
     cumsum_naf = ecdf(vaf)(vaf)*length(vaf)
     cumsum_inv = (length(vaf) - cumsum_naf + 1)[length(vaf):1]
