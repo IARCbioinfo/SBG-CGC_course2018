@@ -66,8 +66,9 @@ exprpath="/home/Output/out_expr/"
 
 if [ $pipelinestart == "expr" ]; then
   
+    cat $inputfile
   # Run kallisto:
-  echo "/home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath"
+  echo "Rscript /home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath"
   Rscript /home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath
   fileexpr=`ls $exprpath/*.tsv`
   ls $exprpath
