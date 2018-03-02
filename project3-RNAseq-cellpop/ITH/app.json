@@ -3,20 +3,31 @@
   "baseCommand": "Rscript BayCount.R",
   "outputs": [
     {
-      "id": "#ICF_output",
+      "id": "#ICF_output_pdf",
       "type": "File",
       "outputBinding": {
         "glob": {
           "engine": "#cwl-js-engine",
           "class": "Expression",
-          "script": "$job.inputs.output_file_name"
+          "script": "*.pdf"
+        }
+      }
+    },
+    {
+      "id": "#ICF_output_rdata",
+      "type": "File",
+      "outputBinding": {
+        "glob": {
+          "engine": "#cwl-js-engine",
+          "class": "Expression",
+          "script": "*.rdata"
         }
       }
     }
   ],
   "inputs": [
     {
-      "type": "File",
+      "type": "String",
       "description": "Files to process with BayCount",
       "label": "input htseq-count",
       "id": "#input_htseq",
@@ -40,11 +51,6 @@
       "id": "#cwl-js-engine"
     }
   ],
-  "stdout": {
-    "engine": "#cwl-js-engine",
-    "class": "Expression",
-    "script": "$job.inputs.output_file_name"
-  },
   "label": "app_ith",
   "id": "app_ith_json",
   "sbg:contributors": [
@@ -63,7 +69,7 @@
     {
       "dockerImageId": "",
       "class": "DockerRequirement",
-      "dockerPull": "iarcbioinfo/sbg-cgc_course2018_project3:ith"
+      "dockerPull": "iarcbioinfo/sbg-cgc_course2018_project3:ITH"
     }
   ]
 }
