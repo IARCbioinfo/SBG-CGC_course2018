@@ -90,7 +90,7 @@ dev.off()
 
 
 R2 = all_r2
-save(R2,file = paste("R2_",strsplit(MAF,".muse")[[1]][1],".Rdata", sep=""))
+save(R2,file = paste("R2_",strsplit(MAF,".m")[[1]][1],".Rdata", sep=""))
 A = all_a
-save(A,file = paste("a_",strsplit(MAF,".muse")[[1]][1],".Rdata", sep=""))
+save(A,file = paste("a_",strsplit(MAF,".m")[[1]][1],".Rdata", sep=""))
 
