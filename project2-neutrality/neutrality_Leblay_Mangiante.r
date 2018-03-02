@@ -10,8 +10,8 @@
 library("optparse")
 
 option_list = list(
-  make_option( c("-V","--vaf_max"), type="numeric", default=0.12, help="Maximun AF to consider a mutation [default= %default]", metavar="numeric"),
-  make_option(c("-v", "--vaf_min"), type="numeric", default=0.25, help="Minimun AF to consider a mutation [default= %default]", metavar="numeric"),
+  make_option( c("-V","--vaf_max"), type="numeric", default=0.25, help="Maximun AF to consider a mutation [default= %default]", metavar="numeric"),
+  make_option(c("-v", "--vaf_min"), type="numeric", default=0.12, help="Minimun AF to consider a mutation [default= %default]", metavar="numeric"),
   make_option(c("-r", "--min_r2"), type="numeric", default=0.9, help="Minimun r2  to compute a coeff [default= %default]", metavar="numeric"),
   make_option(c("-p", "--min_nb_point"), type="numeric", default=12, help="Minimun number of point use for the regression [default= %default]", metavar="numeric"),
   make_option(c("-d", "--dp_min"), type="numeric", default=50, help="Minimun coverage to consider a mutation [default= %default]", metavar="numeric"),
