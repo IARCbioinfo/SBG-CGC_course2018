@@ -18,6 +18,8 @@ f2=$fnamefq"_2.fq"
 echo "samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -"
 samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
 
+prefix=$fname
+
 # create input file
 mkdir -p /home/Input
 echo "Sample "$fname"_1.fq "$fname"_2.fq" > /home/Input/inputfile.txt
