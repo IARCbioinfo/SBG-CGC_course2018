@@ -7,6 +7,7 @@
 # setup variables
 
 echo $PWD
+localDir=$PWD
 
 tumor=TRUE
 #
@@ -120,6 +121,7 @@ if [ $pipelinestart == "decon" ]; then
 
   cp "${deconpath}${prefix}_cell_fractions.txt" /
   cp "${deconpath}${prefix}_cell_fractions.txt" ~/
+  cp "${deconpath}${prefix}_cell_fractions.txt" $localDir/
   
   if [ $btotalcells == "TRUE" ]; then
   cp "${deconpath}${prefix}_cell_densities.txt" /
