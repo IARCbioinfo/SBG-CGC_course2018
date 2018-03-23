@@ -4,6 +4,10 @@
 # quanTIseq pipeline 
 #-------------------------
 
+# setup variables
+
+tumor=TRUE
+#
 fname=$(basename "$1" .bam)
 fnamefq="${1%.bam}"
 f1=$fnamefq"_1.fq"
