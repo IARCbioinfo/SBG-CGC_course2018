@@ -6,6 +6,8 @@
 
 # setup variables
 
+echo $PWD
+
 tumor=TRUE
 #
 fname=$(basename "$1" .bam)
@@ -117,6 +119,7 @@ if [ $pipelinestart == "decon" ]; then
   cat ${deconpath}${prefix}_cell_fractions.txt
 
   cp "${deconpath}${prefix}_cell_fractions.txt" /
+  cp "${deconpath}${prefix}_cell_fractions.txt" ~/
   
   if [ $btotalcells == "TRUE" ]; then
   cp "${deconpath}${prefix}_cell_densities.txt" /
