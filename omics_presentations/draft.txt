@@ -1,1 +1,25 @@
-test
+Analyzing TCGA data in the cloud: what you can do in just one day. - DRAFT
+
+Abstract: During this course we recently organised at IARC, we asked participants to work on their research project during one day using what they just learned. We all recognised how powerful cloud computing can be, and were amazed by what could be achieved in such a short period of time, but we also faced difficulties. We think that knowing what can be accomplished and what the limitations of cloud computing are will be useful to a broader audience. During this presentation, participants will discuss their experience and show how this contributed to their research project for a wide range of applications (quantification of immune contexture, variant calling, mutation signature analysis, tumor evolution etc.). 
+
+Name of the project
+Give a name to your project
+
+Description of the project
+Describe your project:
+ - Why did you choose this one, what was your interest, in which larger project would it be integrated? (scientific part)
+ - Why would you need the cloud to conduct your project? (technical part) 
+ - Maybe give a « plan » of the steps.
+
+State of the project
+Comment on the actual state of the project. For each of the previously described steps, assign a « done » or « to be done ».
+
+Difficulties that you have encountered during the course
+List briefly the difficulties/issues you were faced with.
+
+How have you / would you solved these issues?
+For each of these issues, if it has been solved, explain your solution. If not, you can propose something that you would try, or tell that you do not have any idea right now.
+
+Conclusions
+Maybe here you can discuss on pros and cons of cloud computing, but also on the course (agenda, form of the course: lectures + project).
+
