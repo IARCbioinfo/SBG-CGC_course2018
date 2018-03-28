@@ -13,6 +13,10 @@ mv quanTIseq_pipeline_CGC.sh /bin/ && \
 chmod 755 /bin/quanTIseq_pipeline_CGC.sh && \
 mkdir /home/Input && \
 mkdir /home/user_output && \
+unset help && \
+unset tumor && \
+
+
 
 wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2 && \
   tar -jxf samtools-1.3.1.tar.bz2 && \
