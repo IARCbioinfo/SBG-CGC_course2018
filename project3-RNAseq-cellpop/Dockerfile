@@ -1,5 +1,6 @@
 FROM icbi/quantiseq:latest
 CMD ["/bin/bash"]
+ENV TUMOR="TRUE"
 
 # File Author / Maintainer
 MAINTAINER Nicolas Alcala <alcalan@fellows.iarc.fr>
