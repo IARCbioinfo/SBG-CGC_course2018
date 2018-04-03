@@ -21,8 +21,8 @@ samtools collate -uOn 128 $1 tmp_$fname | samtools fastq -1 $f1 -2 $f2 -
 prefix=$fname
 
 # create input file
-mkdir -p /home/Input
-echo "Sample "$fname"_1.fq "$fname"_2.fq" > /home/Input/inputfile.txt
+#mkdir -p /home/Input
+echo "Sample "$fname"_1.fq "$fname"_2.fq" > $localDir/inputfile.txt
 
 echo "Sample "$fname"_1.fq "$fname"_2.fq"
 
@@ -40,17 +40,18 @@ if [ $help == "TRUE" ]; then
 fi
 
 # check if inputfile exists:
-if [ -f /home/Input/inputfile.txt ]; then
-  inputfile=/home/Input/inputfile.txt
+if [ -f $localDir/inputfile.txt ]; then
+  inputfile=$localDir/inputfile.txt
 else
   echo "ERROR: please specify input files as described in quanTIseq documentation. To inspect this image call: docker run -it --entrypoint=/bin/bash icbi/quantiseq" >&2
   exit
 fi
 
-ln -s $f1 /home/Input/.
-ln -s $f2 /home/Input/.
+#ln -s $f1 /home/Input/.
+#ln -s $f2 /home/Input/.
 
 # Get number of available threads from the system and take the minimum of user input and available threads:
+threads=2
 maxthreads=$(grep -c ^processor /proc/cpuinfo)
 nthreads=$(($maxthreads<$threads?$maxthreads:$threads))
 
@@ -58,7 +59,7 @@ nthreads=$(($maxthreads<$threads?$maxthreads:$threads))
 # Preprocessing / Trimmomatic
 #-----------------------------------
 
-preprocpath="/home/Output/out_preproc/"
+preprocpath=$localDir #"/home/Output/out_preproc/"
 
 echo "Rscript /home/trimmomatic/quanTIseq_preproc.R $inputfile $preprocpath $nthreads $phred $adapters $adapterSeed $palindromeClip $simpleClip $trimLead $trimTrail $minlen $crop"
 
@@ -77,10 +78,9 @@ fi
 # Transcript expression / Kallisto
 #--------------------------------------
 
-exprpath="/home/Output/out_expr/"
+exprpath=$localDir #"/home/Output/out_expr/"
 
 if [ $pipelinestart == "expr" ]; then
-  
     cat $inputfile
   # Run kallisto:
   echo "Rscript /home/kallisto/quanTIseq_expr.R $inputfile $exprpath $nthreads $preproc $preprocpath"
@@ -111,7 +111,7 @@ fi
 # Deconvolution / R
 #-------------------------------------
 
-deconpath="/home/Output/out_decon/"
+deconpath=$localDir #"/home/Output/out_decon/"
 
 if [ $pipelinestart == "decon" ]; then
   # Run deconvolution:
@@ -121,12 +121,12 @@ if [ $pipelinestart == "decon" ]; then
 
   cat ${deconpath}${prefix}_cell_fractions.txt
 
-  cp "${deconpath}${prefix}_cell_fractions.txt" /
-  cp "${deconpath}${prefix}_cell_fractions.txt" ~/
-  cp "${deconpath}${prefix}_cell_fractions.txt" $localDir/
+  #cp "${deconpath}${prefix}_cell_fractions.txt" /
+  #cp "${deconpath}${prefix}_cell_fractions.txt" ~/
+  #cp "${deconpath}${prefix}_cell_fractions.txt" $localDir/
   
-  if [ $btotalcells == "TRUE" ]; then
-  cp "${deconpath}${prefix}_cell_densities.txt" /
-  fi
+  #if [ $btotalcells == "TRUE" ]; then
+  #cp "${deconpath}${prefix}_cell_densities.txt" /
+  #fi
   
 fi
