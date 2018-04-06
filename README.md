@@ -23,7 +23,7 @@ __Main topics__
 ## Agenda and slides
 
 __Wednesday 28 February__  
-09:00-10:00 [Introduction to cloud computing](slides/01-introduction) and the [SevenBridges architecture](slides/02-architecture.pdf)  
+09:00-10:00 [Introduction to cloud computing](slides/01-introduction.pdf) and the [SevenBridges architecture](slides/02-architecture.pdf)  
 10:00-10:30 [Introduction to TCGA](slides/03-TCGA.pdf) data  
 10:30-11:00 [Break](https://pbs.twimg.com/profile_images/490955281744920576/bSgZgrf5_400x400.jpeg)  
 11:00-11:30 Introduction to the SevenBridges [web interface](slides/04-web_interface.pdf) to run analyses  
