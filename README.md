@@ -44,6 +44,10 @@ __Friday 2 March__
 
 A [gitter channel](https://gitter.im/IARCbioinfo/SBG-CGC_course2018) is open for the course. This will allow participants to discuss on their projects but also to ask any question regarding the course.
 
+## IARC project presentation
+
+We presented the scientific projects conducted during the last day of the course at the IARC omics discussion (april 6th 2018). Slides are hosted [here](omics_presentations/CGC_course_omics_presentation.pdf)
+
 ## Laptop setup
 
 Laptops use Ubuntu 16.04.
